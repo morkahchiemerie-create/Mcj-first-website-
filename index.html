@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechconnect Login Portal</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background: #0b1f3a; /* Deep Mechanical Engineering Blue */
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container {
+        background: #ffffff10; 
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .blue {
+        background: #1b3f88; /* Mechanical Engineering Blue */
+        color: white;
+    }
+    .blue:hover {
+        background: #2552b5;
+    }
+
+    .silver {
+        background: #c0c0c0; /* Silver */
+        color: #0b1f3a;
+    }
+    .silver:hover {
+        background: #e2e2e2;
+    }
+
+    .login-section {
+        margin-top: 20px;
+        display: none;
+        animation: fadeIn 0.4s ease forwards;
+    }
+
+    .login-section input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 6px;
+        background: #ffffffd9;
+        color: #000;
+        font-size: 1rem;
+    }
+
+    .login-btn {
+        background: #1b3f88;
+        color: white;
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 5px;
+    }
+
+    .login-btn:hover {
+        background: #2552b5;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 480px) {
+        .container {
+            padding: 25px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Welcome to Mechconnect Login Portal</h2>
+
+    <!-- BUTTONS -->
+    <button class="btn blue" onclick="goProspective()">Prospective Student</button>
+    <button class="btn silver" onclick="showLogin('current')">Current Student</button>
+    <button class="btn silver" onclick="showLogin('lecturer')">Lecturer</button>
+
+    <!-- LOGIN SECTION -->
+    <div id="loginBox" class="login-section">
+        <h3 id="loginTitle"></h3>
+
+        <input type="text" id="userField" placeholder="Email or Student ID">
+        <input type="password" placeholder="Password">
+
+        <button class="login-btn">Login</button>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+<script src="script.js"></script>
